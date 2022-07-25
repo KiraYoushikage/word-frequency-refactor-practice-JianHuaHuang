@@ -16,5 +16,7 @@ public class Input {
         return this.count;
     }
 
-
+    public void setCount(int count) {
+        this.count = count;
+    }
 }
