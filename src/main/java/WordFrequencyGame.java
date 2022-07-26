@@ -15,8 +15,7 @@ public class WordFrequencyGame {
 
         try {
 
-            //split the input string with 1 to n pieces of spaces
-            List<Input> inputList = Arrays.stream(inputStr.split(REGEX)).map(str -> new Input(str, 1)).collect(Collectors.toList());
+            List<Input> inputList=splitTheInputString(inputStr);
 
             List<Input> groupList = groupTheSameStrings(inputList);
 
@@ -45,4 +44,12 @@ public class WordFrequencyGame {
                     }))
                     .values());
     }
+    private List<Input> splitTheInputString(String inputStr){
+
+        return Arrays.stream(inputStr
+                .split(REGEX))
+                .map(str -> new Input(str, 1))
+                .collect(Collectors.toList());
+    }
+
 }
